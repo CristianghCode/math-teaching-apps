@@ -1,0 +1,94 @@
+<script>
+
+document.write("<b>1: PRINT HELLO WORLD USING VARIABLES</b><br><br>");
+
+// To start we will create 2 variables:
+var variable1 = 'Hello ';
+var variable2 = 'World!<br><br>'; // <br> means line break in html
+ 
+// Create a third variable by adding both variables:
+var final_text = variable1 + variable2;
+
+// Print the final result:
+document.write(final_text);
+
+document.write("<b>2: OPERACIONES CON FRACCIONES</b><br><br>");
+
+var p = prompt("introduce numerador 1");
+var q = prompt("introduce denominador 1");
+var r = prompt("introduce numerador 2");
+var s = prompt("introduce denominador 2");
+
+var string = prompt("introduce operacion");
+if(string==="suma"){
+	var numerador = (p*s+r*q);
+    var denominador = q*s;
+    var mcd = mcd(numerador,denominador);
+    
+    
+	document.write(p*s+"+"+r*q+"/"+q*s+"="+numerador+"/"+denominador+" = "+
+    (numerador/mcd)+"/"+(denominador/mcd)
+    
+    );
+}
+if(string==="resta"){
+	var numerador = (p*s-r*q);
+    var denominador = q*s;
+    var mcd = mcd(numerador,denominador);
+    
+    
+	document.write(p*s+"-"+r*q+"/"+q*s+"="+numerador+"/"+denominador+" = "+
+    (numerador/mcd)+"/"+(denominador/mcd)
+    
+    );
+}
+function mcd(n1,n2){
+	var mcd = 1;
+	for(var i=2;i<=Math.abs(n1);i=i+1){
+    	if((n1%i==0)&&(n2%i==0)){
+        	mcd = i;
+        }
+    }
+    return mcd;
+}
+if(string==="multiplicacion"){
+	var numerador = p*q;
+    var denominador = r*s;
+    var mcd = mcd(numerador,denominador);
+    
+    
+	document.write(p+"*"+q+"/"+r+"*"+s+"="+numerador+"/"+denominador+" = "+
+    (numerador/mcd)+"/"+(denominador/mcd)
+    
+    );
+}
+if(string==="division"){
+	var numerador = p*s;
+    var denominador = q*r;
+    var mcd = mcd(numerador,denominador);
+    
+    
+	document.write(p+"*"+s+"/"+q+"*"+r+"="+numerador+"/"+denominador+" = "+
+    (numerador/mcd)+"/"+(denominador/mcd)
+    
+    );
+}
+document.write("<br><br><b>3: TEST DE PRIMALIDAD</b><br><br>");
+
+//Introduce un número mediante un prompt por pantalla
+//Se comprueba mediante el test de la raíz si existe algún valor primo que lo divida
+var n = prompt("Mete el número");
+var raiz = Math.floor(Math.sqrt(n));
+var z = 0;
+for (var i=2; i<=raiz; i=i+1) {
+  
+  if (n%i==0) {
+    document.write("El numero "+n+" no es primo ya que es divisible por "+i);
+    var z = 1;
+    break
+  }
+
+}
+if(z===0) document.write("El numero "+n+" es primo");
+</script>
+
